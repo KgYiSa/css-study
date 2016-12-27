@@ -1,0 +1,44 @@
+/* reset css      start */
+html, body, ul, li {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+/* reset css      end */
+
+body {
+  line-height: 1;
+  font-size: 1.6rem;
+  font-family: 'Jaldi', sans-serif;
+  color: #fff;
+  background-color: #a0f6aa;
+}
+.tree {
+  width: 80%;
+  max-width: 600px;
+  margin: 4em auto;
+  background-color: #4d5158;
+}
+.tree li {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.tree input[type=checkbox] {
+  /* 默认隐藏 */
+  opacity: 0;
+  position: absolute;
+}
+.tree label,
+.tree a {
+  position: relative;
+  display: block;
+  padding: 18px 18px 18px 64px;
+  background-color: #4d5158;
+}
