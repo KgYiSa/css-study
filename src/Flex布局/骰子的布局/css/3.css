@@ -1,0 +1,9 @@
+.box1 {
+  display: flex;
+}
+.box1 .item:nth-child(2) {
+  align-self: center;
+}
+.box1 .item:nth-child(3) {
+  align-self: flex-end;
+}

@@ -1,0 +1,33 @@
+.box1 {
+  display: flex;
+  justify-content: center;
+}
+
+.box2 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.box3 {
+  display: flex;
+  display: flex;
+  align-items: center;
+}
+
+.box4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box5 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.box6 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
