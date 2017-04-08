@@ -1,0 +1,37 @@
+.wrap {
+    height: 200px;
+    width: 400px;
+    margin: 20px 20px 50px;
+    border: 5px solid #AAA;
+    line-height: 25px;
+}
+.prop {
+    float: left;
+    height: 200px;
+    width: 5px;
+    background-color: #FAF;
+}
+.main {
+    float: right;
+    width: 400px;
+    margin-left: -5px;
+    background-color: #AFF;
+}
+.end {
+    float: right;
+    position: relative;
+    width: 100px;
+    background-color: #FFA;
+}
+.realEnd {
+    float: right;
+    position: relative;
+    top: -50px;
+    left: 300px;
+
+    width: 100px;
+    margin-left: -100px;
+    padding-right: 5px;
+    background-color: #faa;
+    font-size: 13px;
+}
