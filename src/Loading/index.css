@@ -1,4 +1,7 @@
 .content-wrap {
+  position: relative;
   height: 500px;
-  width: 100%;
+  width: 50%;
+  border-width: 1px;
+  border-style: solid;
 }
