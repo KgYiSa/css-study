@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>水平居中元素</title>
+        <link rel="stylesheet" href="./css/css1.css" />
+    </head>
+    <body>
+        <h1>方式一：CSS3 transform</h1>
+        <h5>通用方法，元素的宽高未知</h5>
+        <div class="wrap parent1">
+            <div class="content child1"></div>
+        </div>
+        <h1>方式二：Flex 布局</h1>
+        <h5>适用于子元素为浮动，绝对定位，内联元素，均可水平居中</h5>
+        <div class="wrap parent2">
+            <div class="content child2"></div>
+        </div>
+        <h2>居中的元素为常规文档流中的内联元素(display: inline或inline-block)</h2>
+        <div class="wrap parent3">
+            <div class="content child3">111</div>
+        </div>
+        <h2>居中的元素为常规文档流中的块元素(display: block)</h2>
+        <h3>方式一：设置 margin</h3>
+        <div class="wrap parent4">
+            <div class="content child4"></div>
+        </div>
+        <h2>居中的元素为浮动元素，宽度已知</h2>
+        <div class="wrap parent5">
+            <div class="content child5"></div>
+        </div>
+        <h2>居中的元素为绝对定位元素</h2>
+        <h3>方式一：宽度已知</h3>
+        <div class="wrap parent5">
+            <div class="content child5"></div>
+        </div>
+    </body>
+</html>
