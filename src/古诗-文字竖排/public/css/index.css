@@ -1,0 +1,71 @@
+/*  文字垂直排版  start  */
+.verticle-mode {
+    writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+}
+/* IE7比较弱，需要做点额外的动作 */
+.verticle-mode {
+    *width: 120px;
+}
+.verticle-mode h4,
+.verticle-mode p {
+    *display: inline;
+    *writing-mode: tb-rl;
+}
+.verticle-mode h4 {
+    *float: right;
+}
+/*  文字垂直排版  end  */
+
+/*  垂直居中  start  */
+.box {
+    width: 400px;
+    height: 300px;
+    background-color: #f0f3f9;
+    overflow: hidden;
+}
+.auto {
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.verticle-mode2 {
+    writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    *writing-mode: tb-rl;
+    /*  普通的block元素可以垂直居中，但图片这类替换元素不行，要加 text-align:center   */
+    text-align: center;
+}
+/*  垂直居中  end  */
+
+/* text-indent实现文字下沉效果 start */
+a {
+    text-decoration: none;
+}
+.btn {
+    display: block;
+    width: 85px;
+    height: 85px;
+    line-height: 85px;
+    text-align: center;
+    color: #a78252;
+    background-color: #ddc390;
+    border-radius: 50%;
+    border: 6px solid #ddc390;
+    box-shadow: inset 0 0 0 1px #d6b681, 0 1px, 0 2px, 0 3px, 0 4px;
+    font-size: 42px;
+    -webkit-transition: border-color 0.25s, background-color 0.25s;
+    transition: border-color 0.25s, background-color 0.25s;
+}
+.btn:active {
+    text-indent: 2px;
+}
+.verticle-mode3 {
+    writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    *writing-mode: tb-rl;
+}
+/* text-indent实现文字下沉效果 end */
