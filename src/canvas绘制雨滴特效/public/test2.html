@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>可视区域宽度和高度</title>
+        <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    </head>
+    <body>
+        <div id="canvas"></div>
+        <script type="text/javascript" src="./js/Util.js"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                var pageWidth = getPageWidth();
+                var pageHeight = getPageHeight();
+                console.log('页面初始宽度：' + pageWidth);
+                console.log('页面初始高度：' + pageHeight);
+                var can = document.getElementById("canvas");
+                can.style.width = pageWidth + 'px';
+                can.style.height = pageHeight + 'px';
+                window.onresize = function () {
+                    pageWidth = getPageWidth();
+                    pageHeight = getPageHeight();
+                    console.log('页面初始宽度：' + pageWidth);
+                    console.log('页面初始高度：' + pageHeight);
+                    can.style.width = pageWidth + 'px';
+                    can.style.height = pageHeight + 'px';
+                }
+            }
+        </script>
+    </body>
+</html>

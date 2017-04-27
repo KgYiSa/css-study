@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>canvas绘制矩形和圆</title>
+        <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script type="text/javascript" src="./js/Util.js"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                var pageWidth = getPageWidth();
+                var pageHeight = getPageHeight();
+                // console.log('页面初始宽度：' + window.innerWidth);
+                // console.log('页面初始高度：' + window.innerHeight);
+                // console.log('body初始宽度：' + document.body.clientWidth);
+                // console.log('body初始高度：' + document.body.clientHeight);
+                // console.log('documentElement初始宽度：' + document.documentElement.clientWidth);
+                // console.log('documentElement初始高度：' + document.documentElement.clientHeight);
+                var can = document.getElementById("canvas");
+                can.width = pageWidth;
+                can.height = pageHeight;
+                window.onresize = function () {
+                    // console.log('页面大小变化后宽度：' + window.innerWidth);
+                    // console.log('页面大小变化后高度：' + window.innerHeight);
+                    // console.log('页面大小变化后body宽度：' + document.body.clientWidth);
+                    // console.log('页面大小变化后body高度：' + document.body.clientHeight);
+                    // console.log('页面大小变化后documentElement宽度：' + document.documentElement.clientWidth);
+                    // console.log('页面大小变化后documentElement高度：' + document.documentElement.clientHeight);
+                    pageWidth = getPageWidth();
+                    pageHeight = getPageHeight();
+                    can.width = pageWidth;
+                    can.height = pageHeight;
+                }
+            }
+        </script>
+    </body>
+</html>
