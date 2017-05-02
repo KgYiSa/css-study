@@ -2,30 +2,30 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>可视区域宽度和高度</title>
+        <title>canvas绘制圆</title>
         <link rel="stylesheet" type="text/css" href="./css/style.css" />
     </head>
     <body>
-        <div id="canvas"></div>
+        <canvas id="canvas"></canvas>
         <script type="text/javascript" src="./js/Util.js"></script>
         <script type="text/javascript">
-            window.onload = function () {
-                var pageWidth = getPageWidth();
-                var pageHeight = getPageHeight();
-                console.log('页面初始宽度：' + pageWidth);
-                console.log('页面初始高度：' + pageHeight);
-                var can = document.getElementById("canvas");
-                can.style.width = pageWidth + 'px';
-                can.style.height = pageHeight + 'px';
-                window.onresize = function () {
-                    pageWidth = getPageWidth();
-                    pageHeight = getPageHeight();
-                    console.log('页面初始宽度：' + pageWidth);
-                    console.log('页面初始高度：' + pageHeight);
-                    can.style.width = pageWidth + 'px';
-                    can.style.height = pageHeight + 'px';
-                }
+            var can = document.getElementById("canvas");
+            // 设置canvas绘图环境
+            var cxt = can.getContext("2d");
+
+            var pageWidth = can.width = window.innerWidth;
+            var pageHeight = can.height = window.innerHeight;
+
+
+            window.onresize = function () {
+                pageWidth = can.width = window.innerWidth;
+                pageHeight = can.height = window.innerHeight;
             }
+            cxt.fillStyle = "red";
+            // 绘制实心圆:圆心坐标(x轴和y轴)，半径，0-360(从0度绘制到360度，是一个整圆)，逆时针false(顺时针true)
+            cxt.arc(200, 200, 50, 0, Math.PI*2, false);
+            // 填充方法
+            cxt.fill();
         </script>
     </body>
 </html>

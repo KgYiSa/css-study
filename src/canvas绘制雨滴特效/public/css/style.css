@@ -4,9 +4,8 @@ html, body {
 body {
     margin: 0;
     padding: 0;
-    background-color: red;
-    /*overflow: hidden;*/
 }
 #canvas {
+    display: block;
     background-color: black;
 }
