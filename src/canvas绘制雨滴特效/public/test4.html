@@ -23,13 +23,17 @@
             window.onresize = function () {
                 pageWidth = can.width = window.innerWidth;
                 pageHeight = can.height = window.innerHeight;
-                cxt.fillStyle = "red";
-                // 绘制矩形(x坐标，y坐标，宽，高)
-                cxt.fillRect(100,100,50,50);
             }
             cxt.fillStyle = "red";
-            // 绘制矩形(x坐标，y坐标，宽，高)
-            cxt.fillRect(100,100,50,50);
+            var i = 0;
+            setInterval(function () {
+                cxt.clearRect(0, 0, pageWidth, pageHeight);
+                if (pageHeight*0.8 > i) {
+                    i += 2;
+                    // 绘制矩形(x坐标，y坐标，宽，高)
+                    cxt.fillRect(100,i,50,50);
+                }
+            }, 1000/60); // 1秒60帧
         </script>
     </body>
 </html>

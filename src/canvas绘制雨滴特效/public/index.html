@@ -9,6 +9,100 @@
         <canvas id="canvas">
             您的浏览器不支持canvas标签
         </canvas>
-        <script type="text/javascript" src="./js/index.js"></script>
+        <script type="text/javascript" src="./js/Util.js"></script>
+        <script type="text/javascript">
+            var can = document.getElementById("canvas");
+
+            var w = can.width = window.innerWidth;
+            var h = can.height = window.innerHeight;
+
+            var cxt = can.getContext("2d");
+
+
+            window.onresize = function () {
+                w = can.width = window.innerWidth;
+                h = can.height = window.innerHeight;
+            }
+            // 构造雨滴对象
+            function Drop() {};
+            // 给雨滴 添加原型
+            Drop.prototype = {
+                // 初始化方法
+                init: function () {
+                    this.x = random(0, w);
+                    this.y = 0;
+                    // y方向上的随机速度
+                    this.vy = random(3, 5);
+                    // 雨滴下落的最大高度:浏览器窗口高度的 0.8到0.9之间
+                    this.l = random(h*0.8, h*0.9);
+                    // 圆的初试半径
+                    this.r = 1;
+                    // 圆的半径的扩大速度
+                    this.vr = 1;
+                    // 圆的初试透明度
+                    this.a = 1;
+                    // 透明度变化 系数，每次乘以系数
+                    this.va = 0.96;
+                },
+                draw: function () {
+                    if (this.y < this.l) {
+                        cxt.fillStyle = "#0ff";
+                        cxt.fillRect(this.x, this.y, 2, 10);
+                    } else {
+                        cxt.beginPath();
+                        cxt.arc(this.x,this.y,this.r,0,Math.PI*2,false);
+                        cxt.strokeStyle = "rgba(0,255,255,"+this.a+")";
+                        cxt.stroke();
+                    }
+
+                    // 更新坐标
+                    this.update();
+                },
+                // 让雨滴动起来，更新坐标
+                update: function () {
+                    if (this.y < this.l) {
+                        this.y += this.vy;
+                    } else {
+                        if (this.a > 0.03) {
+                            this.r += this.vr;
+                            if (this.r > 50) {
+                                this.a *= this.va;
+                            }
+                        } else {
+                            this.init();
+                        }
+                    }
+                }
+            };
+            var count = 30; // 30个雨滴
+            var drops = []; // 存放30个雨滴的数组
+            // 生成雨滴
+            function setup() {
+                for (var i = 0; i < count; i++) {
+                    (function (j) {
+                        setTimeout(function () {
+                            var drop = new Drop();
+                            drop.init();
+                            drops.push(drop);
+                            // console.log(j);
+                        }, j*100);
+                    }(i));
+                }
+            }
+            // 雨滴移动
+            function move() {
+                cxt.fillStyle = "rgba(0, 0, 0, 0.1)";
+                cxt.fillRect(0,0,w,h);
+                for (var i = 0, j = drops.length; i < j; i++) {
+                    // console.log(drops[i]);
+                    drops[i].draw();
+                }
+                requestAnimationFrame(move);
+            }
+            setup();
+            move();
+
+
+        </script>
     </body>
 </html>
